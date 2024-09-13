@@ -1,33 +1,35 @@
-import React, { useEffect, useState } from "react";
-import Card from "../Components/Card"; // Asegúrate de que la ruta sea correcta
+import React, { useEffect } from "react";
+import Card from "../Components/Card";
 import axios from "axios";
+import { useGlobalContext } from "../Components/utils/global.context"; // Asegúrate de la ruta correcta
 
 const Home = () => {
-  const [dentists, setDentists] = useState([]);
-  const [error, setError] = useState(null);
+  const { state, dispatch } = useGlobalContext();
+  const { data } = state;
+  const [error, setError] = React.useState(null);
 
   useEffect(() => {
-    const fetchDentists = async () => {
+    const fetchData = async () => {
       try {
         const response = await axios.get(
           "https://jsonplaceholder.typicode.com/users"
         );
-        setDentists(response.data);
+        dispatch({ type: "SET_DATA", payload: response.data });
       } catch (error) {
         console.error("Error fetching data:", error);
         setError("Failed to fetch data");
       }
     };
 
-    fetchDentists();
-  }, []);
+    fetchData();
+  }, [dispatch]);
 
   return (
-    <main className="">
-      <h1>Home</h1>
+    <main className={state.theme}>
+      <h1>List of dentist</h1>
       {error && <p>{error}</p>}
       <div className="card-grid">
-        {dentists.map((dentist) => (
+        {data.map((dentist) => (
           <Card
             key={dentist.id}
             id={dentist.id}

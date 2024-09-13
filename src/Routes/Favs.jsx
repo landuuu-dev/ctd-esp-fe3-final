@@ -9,6 +9,13 @@ const Favs = () => {
     setFavorites(savedFavorites);
   }, []);
 
+  // Función para eliminar un favorito del estado y actualizar la vista
+  const handleRemove = (id) => {
+    const updatedFavorites = favorites.filter((fav) => fav.id !== id);
+    setFavorites(updatedFavorites); // Actualizar el estado
+    localStorage.setItem("favorites", JSON.stringify(updatedFavorites)); // Actualizar localStorage
+  };
+
   return (
     <main>
       <h1>Favorites</h1>
@@ -20,6 +27,7 @@ const Favs = () => {
               id={dentist.id}
               name={dentist.name}
               username={dentist.username}
+              onRemove={handleRemove} // Pasamos la función de eliminación
             />
           ))}
         </div>

@@ -18,9 +18,7 @@ const Navbar = () => {
         <li>
           <Link to="/contact">Contact</Link>
         </li>
-        <li>
-          <Link to="/dentist/:id">Detail</Link>
-        </li>
+
         <li>
           <Link to="/favs">Favorites</Link>
         </li>

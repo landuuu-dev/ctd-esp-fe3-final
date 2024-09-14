@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Card from "../Components/Card";
 import axios from "axios";
-import { useGlobalContext } from "../Components/utils/global.context"; // Asegúrate de la ruta correcta
+import { useGlobalContext } from "../Components/utils/global.context";
 
 const Home = () => {
   const { state, dispatch } = useGlobalContext();
@@ -26,6 +26,8 @@ const Home = () => {
 
   return (
     <main className={state.theme}>
+      {" "}
+      {/* Asegúrate de aplicar el tema aquí */}
       <h1>List of dentist</h1>
       {error && <p>{error}</p>}
       <div className="card-grid">

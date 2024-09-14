@@ -6,9 +6,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--background);
   color: var(--text);
-  transition:
-    background-color 0.3s,
-    color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 a {
@@ -163,4 +161,12 @@ input[type="email"]:focus {
   --card-hover-border: #333333;
   --border: #333333;
   --input-focus-border: #3700b3;
+}
+
+.card-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
 }

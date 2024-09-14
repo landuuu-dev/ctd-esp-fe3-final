@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-// Componente Card que muestra la información del dentista y permite agregar o eliminar de favoritos
 const Card = ({ id, name, username, onRemove }) => {
   const [isFavorite, setIsFavorite] = useState(false);
 
@@ -26,7 +25,6 @@ const Card = ({ id, name, username, onRemove }) => {
     localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
     setIsFavorite(false);
 
-    // Llamar a la función de onRemove si existe (solo en la página de favoritos)
     if (onRemove) {
       onRemove(id);
     }
@@ -34,6 +32,11 @@ const Card = ({ id, name, username, onRemove }) => {
 
   return (
     <div className="card">
+      <img
+        src="/public/images/doctor.jpg"
+        alt="Dentist"
+        className="card-image"
+      />
       <h2>{name}</h2>
       <p>@{username}</p>
       <p>ID: {id}</p>

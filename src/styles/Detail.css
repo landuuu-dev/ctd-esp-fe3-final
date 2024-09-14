@@ -1,0 +1,64 @@
+.detail-container {
+  width: 100%;
+  padding: 40px;
+  text-align: center;
+}
+
+.detail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  .detail-content {
+    flex-direction: row;
+  }
+}
+
+.detail-image {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.detail-info {
+  text-align: left;
+}
+
+.detail-page {
+  background-color: var(--background);
+  color: var(--text);
+}
+
+.light {
+  --background: #ffffff;
+  --text: #000000;
+  --link: #1a73e8;
+  --link-hover: #0056b3;
+  --nav-background: #f1f1f1;
+  --footer-background: #f1f1f1;
+  --footer-text: #000000;
+  --button-background: #007bff;
+  --button-text: #ffffff;
+  --button-hover: #0056b3;
+  --border: #e0e0e0;
+  --input-focus-border: #007bff;
+}
+
+.dark {
+  --background: #121212;
+  --text: #e0e0e0;
+  --link: #bb86fc;
+  --link-hover: #9c4dcc;
+  --nav-background: #1f1f1f;
+  --footer-background: #1f1f1f;
+  --footer-text: #e0e0e0;
+  --button-background: #3700b3;
+  --button-text: #ffffff;
+  --button-hover: #6200ea;
+  --border: #333333;
+  --input-focus-border: #3700b3;
+}
